@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import s from './App.module.css';
 import {Screen} from "./components/Screen/Screen";
 import {Button} from "./components/Button/Button";
+import {Counter} from "./components/Counter/Counter";
+import {Settings} from "./components/Settings/Settings";
 
 function App() {
     const MAX_VALUE: number = 5
@@ -11,25 +13,13 @@ function App() {
 
     return (
         <div className={s.app}>
-            <Screen counterValue={counter}/>
-            <div className={s.buttons}>
-                <Button
-                    name={"INC"}
-                    setCounterValue={setCounter}
-                    counterValue={counter}
-                    disabled={counter === MAX_VALUE}
-                    maxValue={MAX_VALUE}
-                    startValue={START_VALUE}
-                />
-                <Button
-                    name={"RESET"}
-                    setCounterValue={setCounter}
-                    counterValue={counter}
-                    disabled={counter === START_VALUE}
-                    maxValue={MAX_VALUE}
-                    startValue={START_VALUE}
-                />
-            </div>
+            <Counter
+                counter={counter}
+                setCounter={setCounter}
+                maxValue={MAX_VALUE}
+                startValue={START_VALUE}
+            />
+            <Settings />
         </div>
     );
 }

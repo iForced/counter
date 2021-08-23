@@ -11,7 +11,14 @@ type ButtonPropsType = {
 }
 
 export const Button: React.FC<ButtonPropsType> = (
-    {name, counterValue, setCounterValue, disabled, maxValue, startValue}
+    {
+        name,
+        counterValue,
+        setCounterValue,
+        disabled,
+        maxValue,
+        startValue
+    }
 ) => {
     const onClickHandler = () => {
         if (name === "INC") {
