@@ -14,18 +14,23 @@
     align-items: center;
     gap: 20px;
 }
-.max_field, .start_field {
+.max_field,
+.start_field {
     display: flex;
     gap: 10px;
     justify-content: space-between;
     width: 100%;
 }
-.max_field input, .start_field input {
+.field_input {
     text-align: right;
     padding: 5px 10px;
     background-color: #F5DF4D;
     border: none;
     border-radius: 5px;
+    box-shadow: inset 0 0 3px 2px #939597;
+}
+.field_input.error {
+    background-color: red;
 }
 .buttons {
     display: flex;

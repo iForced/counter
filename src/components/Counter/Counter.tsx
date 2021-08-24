@@ -8,6 +8,7 @@ type PropsType = {
     setCounter: (value: number) => void
     maxValue: number
     startValue: number
+    error: boolean
 }
 
 export const Counter: React.FC<PropsType> = (
@@ -15,7 +16,8 @@ export const Counter: React.FC<PropsType> = (
         counterValue,
         setCounter,
         maxValue,
-        startValue
+        startValue,
+        error
     }
 ) => {
 
@@ -33,17 +35,18 @@ export const Counter: React.FC<PropsType> = (
             <Screen
                 counterValue={counterValue}
                 maxValue={maxValue}
+                error={error}
             />
             <div className={s.buttons}>
                 <Button
                     name={"INC"}
                     onClick={onClickHandler}
-                    disabled={counterValue === maxValue}
+                    disabled={error || counterValue === maxValue}
                 />
                 <Button
                     name={"RESET"}
                     onClick={onClickHandler}
-                    disabled={counterValue === startValue}
+                    disabled={error || counterValue === startValue}
                 />
             </div>
         </div>
