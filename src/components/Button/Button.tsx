@@ -3,29 +3,22 @@ import s from './Button.module.css'
 
 type ButtonPropsType = {
     name: string
-    setCounterValue: (value: number) => void
-    counterValue: number
     disabled: boolean
-    maxValue: number
-    startValue: number
+    onClick: (name: string) => void
 }
 
 export const Button: React.FC<ButtonPropsType> = (
-    {name, counterValue, setCounterValue, disabled, maxValue, startValue}
-) => {
-    const onClickHandler = () => {
-        if (name === "INC") {
-            counterValue < maxValue && setCounterValue(counterValue + 1)
-        }
-        if (name === "RESET") {
-            setCounterValue(startValue)
-        }
+    {
+        name,
+        disabled,
+        onClick
     }
+) => {
 
     return (
         <button
             className={s.button}
-            onClick={onClickHandler}
+            onClick={() => onClick(name)}
             disabled={disabled}
         >
             {name}

@@ -1,0 +1,12 @@
+.screen {
+    border-radius: 10px;
+    width: 25rem;
+    text-align: center;
+    background-color: #F5DF4D;
+    font-size: 9rem;
+    font-weight: 900;
+    box-shadow: inset 0 0 8px 2px #939597;
+}
+.screen.screen_end {
+    color: red;
+}
