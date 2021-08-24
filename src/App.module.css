@@ -1,21 +1,5 @@
 .app {
     display: flex;
-    flex-direction: column;
+    gap: 40px;
     justify-content: center;
-    align-items: center;
-    margin: 100px auto;
-    border-radius: 20px;
-    width: fit-content;
-    padding: 50px;
-    background-color: #939597;
-}
-
-.buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-    border-radius: 5px;
-    margin: 20px;
-    padding: 20px;
-    box-shadow: 0 0 6px 1px black;
 }

@@ -1,0 +1,37 @@
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 50px;
+    background-color: #939597;
+}
+.parameters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.max_field, .start_field {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+}
+.max_field input, .start_field input {
+    text-align: right;
+    padding: 5px 10px;
+    background-color: #F5DF4D;
+    border: none;
+    border-radius: 5px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 20px;
+}

@@ -1,21 +1,14 @@
 import React from "react";
+import s from './Screen.module.css'
 
 type ScreenPropsType = {
     counterValue: number
+    maxValue: number
 }
 
-export const Screen: React.FC<ScreenPropsType> = ({counterValue}) => {
-    const screenStyles = {
-        borderRadius: '10px',
-        padding: '100px 200px',
-        backgroundColor: '#F5DF4D',
-        fontSize: '9rem',
-        fontWeight: 900,
-        color: counterValue === 5 ? 'red' : '#939597',
-        boxShadow: 'inset 0 0 8px 2px #939597',
-    }
+export const Screen: React.FC<ScreenPropsType> = ({counterValue, maxValue}) => {
     return (
-        <div style={screenStyles}>
+        <div className={s.screen + ' ' + (counterValue === maxValue && s.screen_end)}>
             {counterValue}
         </div>
     )
