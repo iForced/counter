@@ -1,26 +1,19 @@
 import React from "react";
 import s from "./Counter.module.css";
 import {Button} from "../Button/Button";
-import {CounterPropsType} from "./CounterContainer";
 import {ScreenContainer} from "../Screen/ScreenContainer";
 
-export const Counter: React.FC<CounterPropsType> = (
-    {
-        counterValue,
-        maxValue,
-        startValue,
-        error,
-        incCounter,
-        resetCounter,
-    }
-) => {
+type PropsType = {
+    counterValue: number
+    maxValue: number
+    startValue: number
+    error: boolean
+    incCounter: () => void
+    resetCounter: () => void
+}
 
-    const onIncCounter = () => {
-        incCounter()
-    }
-    const onResetCounter = () => {
-        resetCounter()
-    }
+export const Counter: React.FC<PropsType> = (props) => {
+    const {counterValue, maxValue, startValue, error, resetCounter, incCounter} = props
 
     return (
         <div className={s.counter}>
@@ -28,12 +21,12 @@ export const Counter: React.FC<CounterPropsType> = (
             <div className={s.buttons}>
                 <Button
                     name={"INC"}
-                    onClick={onIncCounter}
+                    onClick={incCounter}
                     disabled={error || counterValue === maxValue}
                 />
                 <Button
                     name={"RESET"}
-                    onClick={onResetCounter}
+                    onClick={resetCounter}
                     disabled={error || counterValue === startValue}
                 />
             </div>
