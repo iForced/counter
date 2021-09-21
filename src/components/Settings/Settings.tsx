@@ -1,18 +1,9 @@
 import React, {useState} from "react";
 import s from "./Settings.module.css";
 import {Button} from "../Button/Button";
+import {SettingsPropsType} from "./SettingsContainer";
 
-type PropsType = {
-    maxValue: number
-    startValue: number
-    setMaxValue: (value: number) => void
-    setStartValue: (value: number) => void
-    setCounterValue: (value: number) => void
-    error: boolean
-    setError: (value: boolean) => void
-}
-
-export const Settings: React.FC<PropsType> = (
+export const Settings: React.FC<SettingsPropsType> = (
     {
         maxValue,
         startValue,
@@ -49,7 +40,7 @@ export const Settings: React.FC<PropsType> = (
             setDisabled(true)
         }
     }
-    const onClickHandler = () => {
+    const onSetValue = () => {
         if (startValue < maxValue) {
             localStorage.setItem('startValue', String(startValue))
             localStorage.setItem('maxValue', String(maxValue))
@@ -87,7 +78,7 @@ export const Settings: React.FC<PropsType> = (
                 <Button
                     name={"SET"}
                     disabled={error || disabled}
-                    onClick={onClickHandler}/>
+                    onClick={onSetValue}/>
             </div>
         </div>
     )

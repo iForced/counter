@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import s from './App.module.css';
-import {Settings} from "./components/Settings/Settings";
 import {CounterContainer} from "./components/Counter/CounterContainer";
+import {SettingsContainer} from "./components/Settings/SettingsContainer";
 
 function App() {
 
@@ -12,15 +12,16 @@ function App() {
 
     return (
         <div className={s.app}>
-            <Settings
-                maxValue={MAX_VALUE}
-                startValue={START_VALUE}
-                setMaxValue={setMAX_VALUE}
-                setStartValue={setSTART_VALUE}
-                setCounterValue={setCounter}
-                error={error}
-                setError={setError}
-            />
+            <SettingsContainer />
+            {/*<Settings*/}
+            {/*    maxValue={MAX_VALUE}*/}
+            {/*    startValue={START_VALUE}*/}
+            {/*    setMaxValue={setMAX_VALUE}*/}
+            {/*    setStartValue={setSTART_VALUE}*/}
+            {/*    setCounterValue={setCounter}*/}
+            {/*    error={error}*/}
+            {/*    setError={setError}*/}
+            {/*/>*/}
             <CounterContainer />
         </div>
     );
