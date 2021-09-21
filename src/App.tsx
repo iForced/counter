@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import s from './App.module.css';
-import {Counter} from "./components/Counter/Counter";
 import {Settings} from "./components/Settings/Settings";
 import {CounterContainer} from "./components/Counter/CounterContainer";
 
@@ -22,13 +21,6 @@ function App() {
                 error={error}
                 setError={setError}
             />
-            {/*<Counter*/}
-            {/*    counterValue={counter}*/}
-            {/*    setCounter={setCounter}*/}
-            {/*    maxValue={MAX_VALUE}*/}
-            {/*    startValue={START_VALUE}*/}
-            {/*    error={error}*/}
-            {/*/>*/}
             <CounterContainer />
         </div>
     );

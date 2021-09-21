@@ -1,8 +1,8 @@
 import React from "react";
-import {Screen} from "../Screen/Screen";
 import s from "./Counter.module.css";
 import {Button} from "../Button/Button";
 import {CounterPropsType} from "./CounterContainer";
+import {ScreenContainer} from "../Screen/ScreenContainer";
 
 export const Counter: React.FC<CounterPropsType> = (
     {
@@ -24,11 +24,7 @@ export const Counter: React.FC<CounterPropsType> = (
 
     return (
         <div className={s.counter}>
-            <Screen
-                counterValue={counterValue}
-                maxValue={maxValue}
-                error={error}
-            />
+            <ScreenContainer />
             <div className={s.buttons}>
                 <Button
                     name={"INC"}

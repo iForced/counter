@@ -1,11 +1,6 @@
 import React from "react";
 import s from './Screen.module.css'
-
-type ScreenPropsType = {
-    counterValue: number
-    maxValue: number
-    error: boolean
-}
+import {ScreenPropsType} from "./ScreenContainer";
 
 export const Screen: React.FC<ScreenPropsType> = (
     {
