@@ -25,9 +25,9 @@ enum Actions {
 }
 
 const initialState = {
-    counterValue: Number(localStorage.getItem('startValue')),
-    maxValue: Number(localStorage.getItem('maxValue')),
-    startValue: Number(localStorage.getItem('startValue')),
+    counterValue: Number(localStorage.getItem('startValue')) || 0,
+    maxValue: Number(localStorage.getItem('maxValue')) || 5,
+    startValue: Number(localStorage.getItem('startValue')) || 0,
     error: false,
 }
 

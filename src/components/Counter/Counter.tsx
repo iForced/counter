@@ -13,7 +13,14 @@ type PropsType = {
 }
 
 export const Counter: React.FC<PropsType> = (props) => {
-    const {counterValue, maxValue, startValue, error, resetCounter, incCounter} = props
+    const {
+        counterValue,
+        maxValue,
+        startValue,
+        error,
+        resetCounter,
+        incCounter,
+    } = props
 
     return (
         <div className={s.counter}>

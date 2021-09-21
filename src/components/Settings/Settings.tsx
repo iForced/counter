@@ -1,54 +1,28 @@
-import React, {useState} from "react";
+import React from "react";
 import s from "./Settings.module.css";
 import {Button} from "../Button/Button";
-import {SettingsPropsType} from "./SettingsContainer";
 
-export const Settings: React.FC<SettingsPropsType> = (
-    {
+type PropsType = {
+    maxValue: number
+    startValue: number
+    error: boolean
+    disabled: boolean
+    onMaxChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    onStartChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    onSetValue: () => void
+}
+
+export const Settings: React.FC<PropsType> = (props) => {
+
+    const {
         maxValue,
         startValue,
-        setMaxValue,
-        setStartValue,
-        setCounterValue,
         error,
-        setError
-    }
-) => {
-
-    const [disabled, setDisabled] = useState<boolean>(true)
-
-    const onMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const inputValue = Number(e.currentTarget.value)
-        if (inputValue >= 0) {
-            setMaxValue(inputValue)
-            setDisabled(false)
-            setError(false)
-        } else {
-            setError(true)
-            setDisabled(true)
-        }
-    }
-    const onStartChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const inputValue = Number(e.currentTarget.value)
-        if (inputValue >= 0) {
-            setStartValue(inputValue)
-            setCounterValue(inputValue)
-            setDisabled(false)
-            setError(false)
-        } else {
-            setError(true)
-            setDisabled(true)
-        }
-    }
-    const onSetValue = () => {
-        if (startValue < maxValue) {
-            localStorage.setItem('startValue', String(startValue))
-            localStorage.setItem('maxValue', String(maxValue))
-            setDisabled(true)
-        } else {
-            setError(true)
-        }
-    }
+        disabled,
+        onSetValue,
+        onMaxChange,
+        onStartChange,
+    } = props
 
     return (
         <div className={s.settings}>
