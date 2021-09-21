@@ -2,32 +2,24 @@ import React from "react";
 import {Screen} from "../Screen/Screen";
 import s from "./Counter.module.css";
 import {Button} from "../Button/Button";
+import {CounterPropsType} from "./CounterContainer";
 
-type PropsType = {
-    counterValue: number
-    setCounter: (value: number) => void
-    maxValue: number
-    startValue: number
-    error: boolean
-}
-
-export const Counter: React.FC<PropsType> = (
+export const Counter: React.FC<CounterPropsType> = (
     {
         counterValue,
-        setCounter,
         maxValue,
         startValue,
-        error
+        error,
+        incCounter,
+        resetCounter,
     }
 ) => {
 
-    const onClickHandler = (name: string) => {
-        if (name === 'INC') {
-            setCounter(counterValue + 1)
-        }
-        if (name === 'RESET') {
-            setCounter(startValue)
-        }
+    const onIncCounter = () => {
+        incCounter()
+    }
+    const onResetCounter = () => {
+        resetCounter()
     }
 
     return (
@@ -40,12 +32,12 @@ export const Counter: React.FC<PropsType> = (
             <div className={s.buttons}>
                 <Button
                     name={"INC"}
-                    onClick={onClickHandler}
+                    onClick={onIncCounter}
                     disabled={error || counterValue === maxValue}
                 />
                 <Button
                     name={"RESET"}
-                    onClick={onClickHandler}
+                    onClick={onResetCounter}
                     disabled={error || counterValue === startValue}
                 />
             </div>

@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import s from './App.module.css';
-import {Screen} from "./components/Screen/Screen";
-import {Button} from "./components/Button/Button";
 import {Counter} from "./components/Counter/Counter";
 import {Settings} from "./components/Settings/Settings";
+import {CounterContainer} from "./components/Counter/CounterContainer";
 
 function App() {
 
@@ -23,13 +22,14 @@ function App() {
                 error={error}
                 setError={setError}
             />
-            <Counter
-                counterValue={counter}
-                setCounter={setCounter}
-                maxValue={MAX_VALUE}
-                startValue={START_VALUE}
-                error={error}
-            />
+            {/*<Counter*/}
+            {/*    counterValue={counter}*/}
+            {/*    setCounter={setCounter}*/}
+            {/*    maxValue={MAX_VALUE}*/}
+            {/*    startValue={START_VALUE}*/}
+            {/*    error={error}*/}
+            {/*/>*/}
+            <CounterContainer />
         </div>
     );
 }
